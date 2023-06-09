@@ -1,15 +1,13 @@
+// This is an axios instance config for the fanart service
 import axios from "axios";
-// import dotenv from "dotenv";
-// dotenv.config();
 
-export const trakt = axios.create({
-	baseURL: "https://api.trakt.tv",
+export const fanart = axios.create({
+	method: "get",
+	crossdomain: true,
+	baseURL: "/api/",
 	timeout: 15000,
 	headers: {
-		"Content-type": "application/json",
-		"trakt-api-key": import.meta.env.VITE_TRAKT_API_KEY,
-		"trakt-api-version": 2,
-		// Authorization: "Bearer " + this.traktAccessToken,
+		"Access-Control-Allow-Origin": "*",
 	},
 });
 
@@ -26,7 +24,7 @@ const errorHandler = (error) => {
 };
 
 // registering the custom error handler to the
-// "api" axios instance
-trakt.interceptors.response.use(undefined, (error) => {
+// "fanart" axios instance
+fanart.interceptors.response.use(undefined, (error) => {
 	return errorHandler(error);
 });
