@@ -15,8 +15,8 @@ function App() {
 
 		TraktAPI.traktList("trending")
 			.then((showList) => {
-				setMyList(showList);
-				console.log(showList);
+				// setMyList(showList);
+				// console.log(showList);
 				// setSelectedPokemonName(pokemonList[0]?.name);
 				const arr = showList.map((show) => (
 					<div
@@ -34,8 +34,8 @@ function App() {
 					</div>
 				));
 				setMyList(arr);
-				console.log(arr);
-				console.log(myList);
+				// console.log(arr);
+				// console.log(myList);
 			})
 			.finally(() => {});
 	}, []);

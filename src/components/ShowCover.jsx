@@ -1,14 +1,14 @@
 import { FanartAPI } from "../services/FanartAPI";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ShowCover({ tvdb }) {
 	const [myPhoto, setMyPhoto] = useState("");
+
 	useEffect(() => {
-		FanartAPI.query(tvdb).then((data) => {
-			console.log(data.data);
-			setMyPhoto(data.data.tvthumb[0].url);
+		FanartAPI.query(tvdb).then(({ data }) => {
+			setMyPhoto(data.tvthumb[0].url);
 		});
-	}, []);
+	}, [tvdb]);
 
 	return (
 		<figure>

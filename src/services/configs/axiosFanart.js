@@ -3,12 +3,8 @@ import axios from "axios";
 
 export const fanart = axios.create({
 	method: "get",
-	crossdomain: true,
-	baseURL: "/api/",
+	baseURL: "/api",
 	timeout: 15000,
-	headers: {
-		"Access-Control-Allow-Origin": "*",
-	},
 });
 
 // defining a custom error handler for all APIs
