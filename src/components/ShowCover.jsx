@@ -11,8 +11,15 @@ export default function ShowCover({ tvdb }) {
 	}, [tvdb]);
 
 	return (
-		<figure>
-			<img src={myPhoto} alt="Shoes" />
-		</figure>
+		<>
+			{myPhoto === "" ? (
+				<div class="h-52 w-100 rounded-xl bg-gray-200 animate-pulse"></div>
+			) : (
+				<figure>
+					{/* <div class="h-52 sm:h-full sm:w-72 rounded-xl bg-gray-200 animate-pulse" ></div> */}
+					<img src={myPhoto} alt="Shoes" />
+				</figure>
+			)}
+		</>
 	);
 }

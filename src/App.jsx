@@ -66,7 +66,11 @@ function App() {
 			<p className="read-the-docs">
 				Click on the Vite and React logos to learn more
 			</p>
-			<ul className="gap-8 columns-5">{myList}</ul>
+			{myList.length === 0 ? (
+				<span className="loading loading-ring loading-lg"></span>
+			) : (
+				<ul className="gap-8 columns-5">{myList}</ul>
+			)}
 		</>
 	);
 }
